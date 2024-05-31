@@ -5,29 +5,54 @@ using UnityEngine;
 
 public class MainMenuController : MonoBehaviour
 {
-    [SerializeField] private GameObject buttons;
-    [SerializeField] private GameObject startHint;
-    [SerializeField] private DOTweenAnimation titleAnimation;
+    [Header("UI Panels")]
+    [SerializeField] private UIPanel titlePanel;
+    [SerializeField] private UIPanel menuPanel;
 
-    private bool isStarted;
+    private List<UIPanel> uIPanels = new List<UIPanel>();
 
     private void Awake()
     {
+        titlePanel.Initialize();
+        uIPanels.Add(titlePanel);
+        menuPanel.Initialize();
+        uIPanels.Add(menuPanel);
+    }
 
+    private void Start()
+    {
+        ActivatePanel(titlePanel, true);
     }
 
     public void StartMenu()
     {
-        if (isStarted)
-            return;
-        buttons.SetActive(true);
-        startHint.SetActive(false);
-        isStarted = true;
-        titleAnimation.DOPlay();
+        ActivatePanel(menuPanel);
     }
 
     public void OpenGamesPanel()
     {
         Debug.Log("OpenGamesPanel");
+    }
+
+    private void ActivatePanel(UIPanel panel, bool force = false)
+    {
+        foreach (var p in uIPanels)
+        {
+            if (p == panel)
+            {
+                p.Activate();
+            }
+            else
+            {                
+                if (force)
+                {
+                    p.ForceDeatcivate();
+                }
+                else
+                {
+                    p.Deactivate();
+                }
+            }
+        }
     }
 }
