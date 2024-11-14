@@ -6,106 +6,110 @@
             "id": "27106d2b-3d90-4ece-b61c-a111ff36c875",
             "actions": [
                 {
-                    "name": "Confirm",
+                    "name": "Submit",
                     "type": "Button",
                     "id": "bea6e2ca-f66b-440d-839d-9dda02ae9f33",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Up",
+                    "name": "Cancel",
                     "type": "Button",
-                    "id": "be0cfad2-8717-4bbd-9ca9-0369dc2517fd",
-                    "expectedControlType": "Button",
+                    "id": "eff975b9-9a99-4f06-ad47-5384a3d18b54",
+                    "expectedControlType": "",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Down",
-                    "type": "Button",
-                    "id": "862c84fc-b810-40d8-baa9-3a98794d0047",
-                    "expectedControlType": "Button",
+                    "name": "Navigate",
+                    "type": "Value",
+                    "id": "2ed9ffb3-7698-4c22-af99-63de2e988f3d",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Left",
-                    "type": "Button",
-                    "id": "3b282c3b-fe7d-4124-bada-59f39c40de2a",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Right",
-                    "type": "Button",
-                    "id": "d2c7fdc5-d270-491f-be49-7c4362acc2a4",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
                 {
                     "name": "",
-                    "id": "7509334d-3f77-41ae-8548-a43653884927",
+                    "id": "1041ede5-dc42-4d9c-ab89-b14bafd0e4b6",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "988ed5f4-79b5-4b3e-8fae-6588634c818b",
                     "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Confirm",
+                    "action": "Submit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "207d54bd-9a62-488f-ab81-7ece4c49c906",
+                    "name": "Keyboard",
+                    "id": "0ad49e8d-cd49-4be0-aef2-aad33579bd0b",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Navigate",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "c97b303c-c29f-4c59-920d-9adee867e8d2",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Up",
+                    "action": "Navigate",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "e4a832de-2fd2-4344-90ea-708ce71a4f73",
+                    "name": "down",
+                    "id": "efa31493-e87d-4b16-a3c4-2b72e54864d4",
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Down",
+                    "action": "Navigate",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "5c222cb6-c84d-4cdb-898e-2cdebc9a1eab",
+                    "name": "left",
+                    "id": "235921d0-71e3-4eec-a221-a4497919a9c1",
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Left",
+                    "action": "Navigate",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "213492af-b062-4ce7-ad2f-68cd8fddd189",
+                    "name": "right",
+                    "id": "0925010e-b885-46c1-9e9f-b6b0c6ca33d0",
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Right",
+                    "action": "Navigate",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 }
             ]
         }

@@ -2,14 +2,18 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MainMenuController : MonoBehaviour
 {
     [Header("UI Panels")]
     [SerializeField] private UIPanel titlePanel;
     [SerializeField] private UIPanel menuPanel;
+    [SerializeField] private UIPanel gamePanel;
 
     private List<UIPanel> uIPanels = new List<UIPanel>();
+    private UIPanel currentPanel;
+    private Stack<UIPanel> panelStack = new Stack<UIPanel>();
 
     private void Awake()
     {
@@ -17,42 +21,58 @@ public class MainMenuController : MonoBehaviour
         uIPanels.Add(titlePanel);
         menuPanel.Initialize();
         uIPanels.Add(menuPanel);
+        gamePanel.Initialize();
+        uIPanels.Add(gamePanel);
     }
 
     private void Start()
     {
-        ActivatePanel(titlePanel, true);
+        ActivatePanel(titlePanel);
     }
 
-    public void StartMenu()
+    public void OpenMenuPanel()
     {
         ActivatePanel(menuPanel);
     }
 
     public void OpenGamesPanel()
     {
-        Debug.Log("OpenGamesPanel");
+        ActivatePanel(gamePanel);
     }
 
-    private void ActivatePanel(UIPanel panel, bool force = false)
+    private void ActivatePanel(UIPanel panel)
     {
-        foreach (var p in uIPanels)
         {
-            if (p == panel)
+            if (panel == currentPanel) return;
+            if (panelStack.Count > 0)
             {
-                p.Activate();
+                UIPanel currentPanel = panelStack.Peek();
+                currentPanel.Deactivate();
             }
-            else
-            {                
-                if (force)
-                {
-                    p.ForceDeatcivate();
-                }
-                else
-                {
-                    p.Deactivate();
-                }
-            }
+
+            panel.Activate();
+            panelStack.Push(panel);
+            currentPanel = panel;
+        }
+    }
+
+    public void ClosePanel(InputAction.CallbackContext ctx)
+    {
+        if (panelStack.Count > 1 && ctx.performed)
+        {
+            UIPanel activePanel = panelStack.Pop();
+            activePanel.Deactivate();
+            UIPanel previousPanel = panelStack.Peek();
+            previousPanel.Activate();
+            currentPanel = previousPanel;
+        }
+    }
+
+    public void Submit(InputAction.CallbackContext ctx)
+    {      
+        if (ctx.performed)
+        {
+            currentPanel.Submit();
         }
     }
 }
