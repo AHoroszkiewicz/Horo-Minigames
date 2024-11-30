@@ -1,10 +1,16 @@
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
+using TMPro;
 
 public class GamePanelController : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private UIPanel gamePanel;
+    [SerializeField] private TextMeshProUGUI gameTitleTxt;
+    [SerializeField] private TextMeshProUGUI gameDscTxt;
+
+    [Header("Animation Values")]
     [SerializeField] private float animationTime;
     [SerializeField] private float selectedScale;
     [SerializeField] private float deselectedScale;
@@ -12,6 +18,8 @@ public class GamePanelController : MonoBehaviour
 
     private UIButton[] buttons => gamePanel.Buttons;
     private int selectedButtonId => gamePanel.SelectedButtonId;
+    private Tween titleTween;
+    private Tween dscTween;
 
     private void Awake()
     {
@@ -45,6 +53,12 @@ public class GamePanelController : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void UpdateGameInfo(string title, string dsc, int titleSize, int dscSize)
+    {
+        UpdateTitle(title, titleSize);
+        UpdateDsc(dsc, dscSize);
     }
 
     private bool isNextButtonId(int id)
@@ -89,5 +103,52 @@ public class GamePanelController : MonoBehaviour
         button.transform.SetAsFirstSibling();
         button.transform.DOScale(hiddenScale, animationTime);
         button.transform.DOMoveX(Screen.width / 2, animationTime);
+    }
+
+    private void UpdateTitle(string title, int size)
+    {
+        titleTween?.Kill();
+        string text = gameTitleTxt.text;    
+
+        titleTween = DOTween.To(() => text.Length, x => text = text.Substring(0, x), 0, animationTime / 2)
+            .OnUpdate(() => gameTitleTxt.text = text)
+            .OnComplete(() =>
+            {
+                if (size == 0)
+                {
+                    gameTitleTxt.enableAutoSizing = true;
+                }
+                else
+                {
+                    gameTitleTxt.enableAutoSizing = false;
+                    gameTitleTxt.fontSize = size;
+                }
+                titleTween = DOTween.To(() => text.Length, x => text = title.Substring(0, x), title.Length, animationTime / 2)
+                    .OnUpdate(() => gameTitleTxt.text = text);
+            });
+    }
+
+
+    private void UpdateDsc(string dsc, int size)
+    {
+        dscTween?.Kill();
+        string text = gameDscTxt.text;
+
+        dscTween = DOTween.To(() => text.Length, x => text = text.Substring(0, x), 0, animationTime / 2)
+            .OnUpdate(() => gameDscTxt.text = text)
+            .OnComplete(() =>
+            {
+                if (size == 0)
+                {
+                    gameDscTxt.enableAutoSizing = true;
+                }
+                else
+                {
+                    gameDscTxt.enableAutoSizing = false;
+                    gameDscTxt.fontSize = size;
+                }
+                dscTween = DOTween.To(() => text.Length, x => text = dsc.Substring(0, x), dsc.Length, animationTime / 2)
+                    .OnUpdate(() => gameDscTxt.text = text);
+            });
     }
 }

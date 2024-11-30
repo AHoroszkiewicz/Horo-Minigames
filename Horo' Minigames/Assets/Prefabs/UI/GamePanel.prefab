@@ -85,6 +85,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gamePanel: {fileID: 4451519836388651832}
+  gameTitleTxt: {fileID: 3311887756158337770}
+  gameDscTxt: {fileID: 2474492255815733899}
   animationTime: 0.6
   selectedScale: 1.3
   deselectedScale: 1
@@ -101,7 +103,7 @@ GameObject:
   - component: {fileID: 678851292742840312}
   - component: {fileID: 2474492255815733899}
   m_Layer: 0
-  m_Name: Text (TMP) (2)
+  m_Name: DscTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,8 +156,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua.
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -182,7 +183,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27.35
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -238,7 +239,7 @@ GameObject:
   - component: {fileID: 8172959233777227980}
   - component: {fileID: 3311887756158337770}
   m_Layer: 0
-  m_Name: Text (TMP) (1)
+  m_Name: TitleTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -291,7 +292,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Tytu\u0142 gry"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -318,7 +319,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 67.1
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -570,13 +571,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7837337489327995579, guid: d8cb890f6b4d12d4da07275c0d400353,
         type: 3}
+      propertyPath: gameCardSO
+      value: 
+      objectReference: {fileID: 11400000, guid: adabac27ce129594fa3ddbe73e42b41e,
+        type: 2}
+    - target: {fileID: 7837337489327995579, guid: d8cb890f6b4d12d4da07275c0d400353,
+        type: 3}
       propertyPath: gamePanelController
       value: 
       objectReference: {fileID: 5262515693601767111}
     - target: {fileID: 8065848520441696904, guid: d8cb890f6b4d12d4da07275c0d400353,
         type: 3}
       propertyPath: m_Name
-      value: GameCard (2)
+      value: GameCard orange
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -698,13 +705,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7837337489327995579, guid: d8cb890f6b4d12d4da07275c0d400353,
         type: 3}
+      propertyPath: gameCardSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 2570cf56f2d15fe41bd32ed8d4a21ac1,
+        type: 2}
+    - target: {fileID: 7837337489327995579, guid: d8cb890f6b4d12d4da07275c0d400353,
+        type: 3}
       propertyPath: gamePanelController
       value: 
       objectReference: {fileID: 5262515693601767111}
     - target: {fileID: 8065848520441696904, guid: d8cb890f6b4d12d4da07275c0d400353,
         type: 3}
       propertyPath: m_Name
-      value: GameCard (3)
+      value: GameCard purple
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -821,13 +834,19 @@ PrefabInstance:
       objectReference: {fileID: 2323044942944603344}
     - target: {fileID: 7837337489327995579, guid: d8cb890f6b4d12d4da07275c0d400353,
         type: 3}
+      propertyPath: gameCardSO
+      value: 
+      objectReference: {fileID: 11400000, guid: c8a82ff8f3cee844aada83dc24a481f0,
+        type: 2}
+    - target: {fileID: 7837337489327995579, guid: d8cb890f6b4d12d4da07275c0d400353,
+        type: 3}
       propertyPath: gamePanelController
       value: 
       objectReference: {fileID: 5262515693601767111}
     - target: {fileID: 8065848520441696904, guid: d8cb890f6b4d12d4da07275c0d400353,
         type: 3}
       propertyPath: m_Name
-      value: GameCard
+      value: GameCard black
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -949,13 +968,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7837337489327995579, guid: d8cb890f6b4d12d4da07275c0d400353,
         type: 3}
+      propertyPath: gameCardSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 08051c5d4b07685498fbcdeaa51a72b3,
+        type: 2}
+    - target: {fileID: 7837337489327995579, guid: d8cb890f6b4d12d4da07275c0d400353,
+        type: 3}
       propertyPath: gamePanelController
       value: 
       objectReference: {fileID: 5262515693601767111}
     - target: {fileID: 8065848520441696904, guid: d8cb890f6b4d12d4da07275c0d400353,
         type: 3}
       propertyPath: m_Name
-      value: GameCard (1)
+      value: GameCard green
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
