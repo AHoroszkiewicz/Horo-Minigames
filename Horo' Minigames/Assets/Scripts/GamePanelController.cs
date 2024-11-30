@@ -2,6 +2,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GamePanelController : MonoBehaviour
 {
@@ -59,6 +60,13 @@ public class GamePanelController : MonoBehaviour
     {
         UpdateTitle(title, titleSize);
         UpdateDsc(dsc, dscSize);
+    }
+
+    public void SelectGame(string sceneName)
+    {
+        //TODO add scene manager with more functionality
+        try { SceneManager.LoadScene(sceneName); }
+        catch { Debug.LogError("Scene not found"); }
     }
 
     private bool isNextButtonId(int id)

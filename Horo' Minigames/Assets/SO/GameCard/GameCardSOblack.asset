@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameName: black
   gameDescription: dupa dupsko
-  gameScene:
-    m_Handle: 0
+  gameScene: TestScene
   titleSize: 65
   dscSize: 65

@@ -834,6 +834,11 @@ PrefabInstance:
       objectReference: {fileID: 2323044942944603344}
     - target: {fileID: 7837337489327995579, guid: d8cb890f6b4d12d4da07275c0d400353,
         type: 3}
+      propertyPath: isLocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7837337489327995579, guid: d8cb890f6b4d12d4da07275c0d400353,
+        type: 3}
       propertyPath: gameCardSO
       value: 
       objectReference: {fileID: 11400000, guid: c8a82ff8f3cee844aada83dc24a481f0,
