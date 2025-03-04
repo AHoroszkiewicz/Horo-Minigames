@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a76c60c0c73c04289b4fea7e684f4f, type: 3}
   m_Name: GameCardSOorange
   m_EditorClassIdentifier: 
-  gameName: orange
-  gameDescription: jakis opis a co sie stanie jak dodam wiecej
-  gameScene:
-    m_Handle: 0
+  gameName: TBD
+  gameDescription: this time its orange
+  gameScene: 
   titleSize: 65
   dscSize: 40

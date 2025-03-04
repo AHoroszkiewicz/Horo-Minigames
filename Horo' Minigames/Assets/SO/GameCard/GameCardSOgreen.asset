@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a76c60c0c73c04289b4fea7e684f4f, type: 3}
   m_Name: GameCardSOgreen
   m_EditorClassIdentifier: 
-  gameName: green
-  gameDescription: sprzedam opla
-  gameScene:
-    m_Handle: 0
+  gameName: TBD
+  gameDescription: this time its green
+  gameScene: 
   titleSize: 65
-  dscSize: 65
+  dscSize: 50
