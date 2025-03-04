@@ -96,14 +96,34 @@ public class GamePanelController : MonoBehaviour
 
     private void SetNextGame(Button button)
     {
+        foreach(var a in buttons)
+        {
+            a.Button.enabled = false;
+        }
         button.transform.DOScale(deselectedScale, animationTime);
-        button.transform.DOMoveX(Screen.width / 2 + 500, animationTime);
+        button.transform.DOMoveX(Screen.width / 2 + 500, animationTime).OnComplete(() =>
+        {
+            foreach (var a in buttons)
+            {
+                a.Button.enabled = true;
+            }
+        });
     }
 
     private void SetPreviousGame(Button button)
     {
+        foreach (var a in buttons)
+        {
+            a.Button.enabled = false;
+        }
         button.transform.DOScale(deselectedScale, animationTime);
-        button.transform.DOMoveX(Screen.width / 2 - 500, animationTime);
+        button.transform.DOMoveX(Screen.width / 2 - 500, animationTime).OnComplete(() =>
+        {
+            foreach (var a in buttons)
+            {
+                a.Button.enabled = true;
+            }
+        });
     }
 
     private void SetHiddenGame(Button button)
