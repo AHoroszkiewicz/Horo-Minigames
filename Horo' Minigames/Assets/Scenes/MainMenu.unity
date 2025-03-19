@@ -530,6 +530,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -322.20996
       objectReference: {fileID: 0}
+    - target: {fileID: 215291744927491520, guid: 3024f6207286ee14a96edccd18dacaab,
+        type: 3}
+      propertyPath: m_Name
+      value: MagicHell2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 581831319025393898, guid: 3024f6207286ee14a96edccd18dacaab,
         type: 3}
       propertyPath: m_AnchorMax.y

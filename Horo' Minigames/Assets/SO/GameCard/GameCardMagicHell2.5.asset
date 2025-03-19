@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11a76c60c0c73c04289b4fea7e684f4f, type: 3}
-  m_Name: GameCardSOblack
+  m_Name: GameCardMagicHell2.5
   m_EditorClassIdentifier: 
-  gameName: Magic Hell 2
+  gameName: Magic Hell 2.5
   gameDescription: Clone of the "Vampire Survivors" game
-  gameScene: TestScene
+  gameScene: MagicHell2.5
   titleSize: 65
   dscSize: 45
