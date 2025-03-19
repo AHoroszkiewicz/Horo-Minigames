@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float groundDistance = 0.5f;
     [SerializeField] private Rigidbody rb;
     [SerializeField] private LayerMask terrainLayer;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private ParticleSystem jumpParticles;
 
     public float GroundDistance => groundDistance;
 
@@ -17,6 +19,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         if (rb == null) rb = GetComponent<Rigidbody>();
+        if (spriteRenderer == null) spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -46,5 +49,18 @@ public class Enemy : MonoBehaviour
         }
         velocity.y = 0;
         rb.linearVelocity = velocity;
+        if (velocity.x > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else if (velocity.x < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+    }
+
+    public void PlayJumpParticles()
+    {
+        jumpParticles.Play();
     }
 }
